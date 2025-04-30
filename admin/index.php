@@ -31,7 +31,7 @@
                                 $kadi = $_POST['kadi'];
                                 $sifre = $_POST['sifre'];
 
-                                if($kadi == 'Admin' && $sifre == '123'){
+                                if ($kadi == 'Admin' && $sifre == '123') {
                                     echo '<div class="alert alert-success">Kullanıcı Adı ve Şifreniz Doğru</div>
                                     <meta http-equiv="refresh" content="2; url=dashboard.php">';
                                     $_SESSION['kadi'] = $kadi;
@@ -46,7 +46,7 @@
                 </div>
             </div>
         </div>
-    </section>   
+    </section>
 
 
     <script src="../assets/js/bootstrap.bundle.min.js"></script>
