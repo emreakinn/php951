@@ -19,12 +19,12 @@ if (isset($_GET['deleteID'])) {
     $postSelectSatir = $postSelect->fetch();
 
     echo '
-    <script>
-            document.addEventListener("DOMContentLoaded", function () {
-            var myModal = new bootstrap.Modal(document.getElementById("exampleModal"));
-            myModal.show();
-            });
-    </script>
+        <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                var myModal = new bootstrap.Modal(document.getElementById("exampleModal"));
+                myModal.show();
+                });
+        </script>
     ';
 }
 ?>

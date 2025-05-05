@@ -62,8 +62,7 @@
 
             <?php
 
-            if (isset($_POST{
-            'yaziKaydet'})) {
+            if (isset($_POST['yaziKaydet'])) {
                 $baslik = $_POST['baslik'];
                 $aciklama = $_POST['aciklama'];
                 $meta = $_POST['meta'];
