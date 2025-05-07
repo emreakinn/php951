@@ -87,7 +87,6 @@ if (isset($_GET['katDelete'])) {
                 </tr>
             </thead>
             <tbody>
-
                 <?php
 
                 $katSec = $db->prepare('select * from kategoriler order by katAdi asc');
@@ -108,8 +107,6 @@ if (isset($_GET['katDelete'])) {
                     }
                 }
                 ?>
-
-
             </tbody>
         </table>
     </div>

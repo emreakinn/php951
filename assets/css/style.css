@@ -1,4 +1,29 @@
-#adminNav a{
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.12.1/font/bootstrap-icons.min.css");
+
+* {
+    text-decoration: none !important;
+}
+
+#adminNav a {
     color: #fff;
-    text-decoration: none;
+}
+
+.footerMenu {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.bi {
+    font-size: 24px;
+}
+
+.social {
+    display: flex;
+    column-gap: 15px;
+}
+
+#footer,
+#footer a {
+    color: #fff;
 }
