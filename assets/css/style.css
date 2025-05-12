@@ -27,3 +27,23 @@
 #footer a {
     color: #fff;
 }
+
+.banner {
+    padding: 150px 0;
+    background-color: #e2e3e5;
+}
+
+.btn-purple {
+    background-color: #6c55f9;
+    color: #fff;
+}
+
+.text-purple {
+    color: #6c55f9;
+}
+
+.flexList {
+    display: flex;
+    flex-direction: column;
+
+}
