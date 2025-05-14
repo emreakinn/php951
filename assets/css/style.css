@@ -16,6 +16,7 @@
 
 .bi {
     font-size: 24px;
+    color: #393939;
 }
 
 .social {
@@ -24,7 +25,8 @@
 }
 
 #footer,
-#footer a {
+#footer a,
+#footer .bi {
     color: #fff;
 }
 
@@ -45,5 +47,4 @@
 .flexList {
     display: flex;
     flex-direction: column;
-
 }

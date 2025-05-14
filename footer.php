@@ -42,7 +42,7 @@
                         <small>Güncel blog yazıları ve teknoloji haberleri hakkında bilgi almak için e-bültenimize üye olun</small>
                         <form action="" method="post" class="mt-3">
                             <input type="email" name="eposta" placeholder="E-Posta Adresiniz" class="form-control mb-1">
-                            <input type="submit" value="Üye Ol" class="btn btn-success w-100">
+                            <input type="submit" name="uyeOl" value="Üye Ol" class="btn btn-success w-100">
                         </form>
                     </div>
                 </div>
