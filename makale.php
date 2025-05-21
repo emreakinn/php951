@@ -42,8 +42,8 @@ if (isset($_GET['postID'])) {
                         <input type="text" name="isim" placeholder="Adınız Soyadınız" class="form-control" required>
                         <input type="email" name="eposta" placeholder="E-Mail Adresiniz" class="form-control" required>
                         <textarea name="yorum" placeholder="Yorumunuz" rows="5" class="form-control"></textarea>
-                        <input type="hidden" name="blogAdi" value="<?php echo $articleSatir['baslik'] ?>">
-                        <input type="submit" name="yorumYap" value="Gönder" class="btn btn-success" required>
+                        <input type="hidden" name="blog" value="<?php echo $articleSatir['id']; ?>">
+                        <input type="submit" name="yorumYap" value="Gönder" class="btn btn-success">
                     </form>
                 </div>
 
@@ -58,5 +58,46 @@ if (isset($_GET['postID'])) {
 </section>
 
 <!-- Content Section End -->
+
+<!-- Yorum Add Module Start -->
+
+<?php
+
+if (isset($_POST['yorumYap'])) {
+    $yorumEKle = $db->prepare('insert into yorumlar(isim, eposta, yorum, yaziID, durum) values(?,?,?,?,?)');
+    $yorumEKle->execute(array($_POST['isim'], $_POST['eposta'], $_POST['yorum'], $_POST['blog'], 'Onaylanmadı'));
+
+    if ($yorumEKle->rowCount()) {
+        echo '<script>
+        document.addEventListener("DOMContentLoaded", function () {
+        let toastEl = document.getElementById("liveToast");
+        let toast = new bootstrap.Toast(toastEl, {
+        delay: 2000 // 2 saniye görünür
+    });
+
+        toast.show();
+
+        toastEl.addEventListener("hidden.bs.toast", function () {
+        window.location.href = "makale.php?postID=' . $articleSatir['id'] . '";
+    });
+  });
+</script>';
+    }
+}
+
+?>
+
+<!-- Yorum Add Module End -->
+
+<div class="position-fixed p-3" style="z-index: 1100; right:40%; top:50px;">
+    <div id="liveToast" class="toast align-items-center text-bg-warning border-0" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="d-flex">
+            <div class="toast-body">
+                Yorumunuz Admin Onayına Gönderildi
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Kapat"></button>
+        </div>
+    </div>
+</div>
 
 <?php require_once('footer.php') ?>

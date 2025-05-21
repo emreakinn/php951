@@ -1,5 +1,5 @@
 <div class="col-md-3">
-    <div class="row">
+    <div class="row mb-3">
         <div class="col-12">
             <div class="card shadow">
                 <div class="card-body">
@@ -11,7 +11,7 @@
             </div>
         </div>
     </div>
-    <div class="row">
+    <div class="row mb-3">
         <div class="col-12">
             <div class="card shadow">
                 <div class="card-body">
@@ -25,7 +25,7 @@
             </div>
         </div>
     </div>
-    <div class="row">
+    <div class="row mb-3">
         <div class="col-12">
             <div class="card shadow">
                 <div class="card-body">
@@ -48,7 +48,7 @@
             </div>
         </div>
     </div>
-    <div class="row">
+    <div class="row mb-3">
         <div class="col-12">
             <div class="card shadow">
                 <div class="card-body">
@@ -67,6 +67,21 @@
                         }
                         ?>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="card shadow">
+                <div class="card-body">
+                    <?php
+
+                    $reklamCek = $db->prepare('select * from reklam_talep where durum="Onaylandı" order by id desc limit 1');
+                    $reklamCek->execute();
+                    $reklamCekSatir = $reklamCek->fetch();
+                    ?>
+                    <a href="<?php echo $reklamCekSatir['gorsel']; ?>adres" target="_blank"><img src="<?php echo $reklamCekSatir['gorsel']; ?>" alt="" class="w-100"></a>
                 </div>
             </div>
         </div>
@@ -112,8 +127,8 @@
 if (isset($_POST['reklam'])) {
     $gorsel = './assets/img/' . $_FILES['gorsel']['name'];
     if (move_uploaded_file($_FILES['gorsel']['tmp_name'], $gorsel)) {
-        $reklamTalep = $db->prepare('insert into reklam_talep(isim, telefon, eposta, adres, gorsel) values(?,?,?,?,?)');
-        $reklamTalep->execute(array($_POST['isim'], $_POST['telefon'], $_POST['eposta'], $_POST['adres'], $gorsel));
+        $reklamTalep = $db->prepare('insert into reklam_talep(isim, telefon, eposta, adres, gorsel, durum) values(?,?,?,?,?,?)');
+        $reklamTalep->execute(array($_POST['isim'], $_POST['telefon'], $_POST['eposta'], $_POST['adres'], $gorsel, 'Bekliyor'));
 
         if ($reklamTalep->rowCount()) {
             echo '<script> alert("En Kısa Zamanda Aranacaksınız") </script><meta http-equiv="refresh" content="0; url=makale.php?postID=' . $id . '">';
