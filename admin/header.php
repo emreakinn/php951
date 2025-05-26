@@ -42,6 +42,7 @@ if (!isset($_SESSION['kadi'])) {
                     <a href="yazilar.php">Yazılar</a><br>
                     <a href="portfolyo.php">Portfolyo</a><br>
                     <a href="hizmetler.php">Hizmetler</a><br>
+                    <a href="yorumlar.php">Yorumlar</a><br>
                     <a href="reklam-talep.php">Reklam Talepleri</a><br>
                     <a href="logout.php" class="text-warning">Güvenli Çıkış</a>
                 </div>
