@@ -1,17 +1,5 @@
 <?php require_once('header.php') ?>
-
-<!-- Blog Banner Section Start -->
-<section id="blogBanner" class="banner">
-    <div class="container">
-        <div class="row">
-            <div class="col-12 text-center">
-                <h1 class="display-1">Blog</h1>
-                <small><a href="index.php" class="text-dark">Ana Sayfa</a> / Blog </small>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Blog Banner Section End -->
+<?php require_once('banner.php') ?>
 
 <!-- Search Section Start -->
 
