@@ -37,14 +37,23 @@ if (!isset($_SESSION['kadi'])) {
             </div>
             <div class="row" style="height: 96.5vh;">
                 <div class="col-md-2 bg-dark py-3" id="adminNav">
-                    <a href="dashboard.php">Başlangıç</a><br>
-                    <a href="kategoriler.php">Kategoriler</a><br>
-                    <a href="yazilar.php">Yazılar</a><br>
-                    <a href="portfolyo.php">Portfolyo</a><br>
-                    <a href="hizmetler.php">Hizmetler</a><br>
-                    <a href="yorumlar.php">Yorumlar</a><br>
-                    <a href="mesajlar.php">Mesajlar</a><br>
-                    <a href="reklam-talep.php">Reklam Talepleri</a><br>
+                    <a href="dashboard.php">Başlangıç</a>
+                    <a href="kategoriler.php">Kategoriler</a>
+                    <a href="yazilar.php">Yazılar</a>
+                    <div class="dropdown">
+                        <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Sayfalar
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item text-dark" href="hakkimizda.php">Hakkımızda</a></li>
+                            <li><a class="dropdown-item text-dark" href="">Another action</a></li>
+                        </ul>
+                    </div>
+                    <a href="portfolyo.php">Portfolyo</a>
+                    <a href="hizmetler.php">Hizmetler</a>
+                    <a href="yorumlar.php">Yorumlar</a>
+                    <a href="mesajlar.php">Mesajlar</a>
+                    <a href="reklam-talep.php">Reklam Talepleri</a>
                     <a href="logout.php" class="text-warning">Güvenli Çıkış</a>
                 </div>
                 <div class="col-md-10 bg-light py-3">

@@ -4,6 +4,12 @@
     text-decoration: none !important;
 }
 
+#adminNav {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
 #adminNav a {
     color: #fff;
 }
