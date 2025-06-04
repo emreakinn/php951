@@ -39,6 +39,9 @@
 .banner {
     padding: 150px 0;
     background-color: #e2e3e5;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: center center !important;
 }
 
 .btn-purple {
