@@ -44,7 +44,8 @@
     background-position: center center !important;
 }
 
-.btn-purple {
+.btn-purple,
+.bg-purple {
     background-color: #6c55f9;
     color: #fff;
 }
@@ -53,7 +54,21 @@
     color: #6c55f9;
 }
 
+.btn-purple:hover {
+    background-color: #6048ff;
+    color: #fff;
+}
+
 .flexList {
     display: flex;
     flex-direction: column;
+}
+
+#pricing,
+.list-group-item {
+    border: none;
+}
+
+.kaanksss {
+    padding: 80px 0;
 }
