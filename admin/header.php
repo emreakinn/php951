@@ -45,6 +45,7 @@ if (!isset($_SESSION['kadi'])) {
                             Sayfalar
                         </a>
                         <ul class="dropdown-menu">
+                            <li><a class="dropdown-item text-dark" href="anasayfa.php">Ana Sayfa</a></li>
                             <li><a class="dropdown-item text-dark" href="hakkimizda.php">Hakkımızda</a></li>
                             <li><a class="dropdown-item text-dark" href="">Another action</a></li>
                         </ul>

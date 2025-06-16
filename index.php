@@ -1,18 +1,41 @@
-<?php require_once('header.php') ?>
+<?php require_once('header.php');
+
+// Main Page settings start
+
+$mainPageSet = $db->prepare('select * from anasayfa order by id desc limit 1');
+$mainPageSet->execute();
+$mainPageSetRow = $mainPageSet->fetch();
+
+// Main Page settings start
+
+?>
 <!-- Main banner section start -->
 <section id="mainBanner">
     <div class="container kaanksss rounded-5" style="background: #f2f2f2;">
         <div class="row px-4">
-            <div class="col-md-6">
-                <h1>Banner Başlık Gelecek</h1>
-                <p>Kısa Açıklama Gelecek</p>
+            <div class="col-md-6 my-auto">
+                <h1><?php echo $mainPageSetRow['baslik']; ?></h1>
+                <p><?php echo $mainPageSetRow['aciklama']; ?></p>
                 <div type="button" style="display: flex; align-items:center; column-gap:10px; padding:8px 0; width:30%; justify-content:center; border-radius:8px;" class="btn-purple" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     Tanıtım Videosu <i class="bi bi-play-circle-fill text-white"></i>
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Sayfa Yüklendiğinde Gösterilen Modal</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/<?php echo $mainPageSetRow['video']; ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-6">
-                Görsel Gelecek
-                <img src="" alt="">
+            <div class="col-md-6 my-auto">
+                <img src="<?php echo substr($mainPageSetRow['gorsel'], 1); ?>" alt="<?php $mainPageSetRow['baslik']; ?>" class="w-100">
             </div>
         </div>
     </div>
@@ -87,6 +110,14 @@
         </div>
     </div>
 </section>
+
+<?php
+if (isset($_POST['seoApp'])) {
+    $url = urlencode($_POST['siteAdres']);
+    echo '<script>alert("Seo kontrolüne yönlendiriliyorsunuz")</script><meta http-equiv="refresh" content="0; url=https://freetools.seobility.net/en/seocheck/check?url=' . $url . '&crawltype=1">';
+}
+
+?>
 <!-- Seo application section end -->
 
 <!-- Pricing section start -->
@@ -101,16 +132,56 @@
             <div class="col-md-4">
                 <div class="card shadow text-center" style="border: none;">
                     <div class="card-header bg-transparent py-4">
-                        <p>Paket Adı</p>
-                        <span class="fs-2">Fiyat</span>
+                        <p><?php echo $mainPageSetRow['paketAdi1']; ?></p>
+                        <span class="fs-2"><?php echo $mainPageSetRow['fiyat1']; ?></span>
                     </div>
                     <div class="card-body">
                         <ol class="list-group">
-                            <li class="list-group-item">1</li>
-                            <li class="list-group-item">2</li>
-                            <li class="list-group-item">3</li>
-                            <li class="list-group-item">4</li>
-                            <li class="list-group-item">5</li>
+                            <li class="list-group-item"><?php echo $mainPageSetRow['paket1ozellik1']; ?></li>
+                            <li class="list-group-item"><?php echo $mainPageSetRow['paket1ozellik2']; ?></li>
+                            <li class="list-group-item"><?php echo $mainPageSetRow['paket1ozellik3']; ?></li>
+                            <li class="list-group-item"><?php echo $mainPageSetRow['paket1ozellik4']; ?></li>
+                            <li class="list-group-item"><?php echo $mainPageSetRow['paket1ozellik5']; ?></li>
+                        </ol>
+                    </div>
+                    <div class="card-footer bg-transparent py-4">
+                        <a href="iletisim.php" class="btn bg-secondary-subtle w-100 py-3 fs-4">Başvur</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow text-center" style="border: none;">
+                    <div class="card-header bg-transparent py-4">
+                        <p><?php echo $mainPageSetRow['paketAdi2']; ?></p>
+                        <span class="fs-2"><?php echo $mainPageSetRow['fiyat2']; ?></span>
+                    </div>
+                    <div class="card-body">
+                        <ol class="list-group">
+                            <li class="list-group-item"><?php echo $mainPageSetRow['paket2ozellik1']; ?></li>
+                            <li class="list-group-item"><?php echo $mainPageSetRow['paket2ozellik2']; ?></li>
+                            <li class="list-group-item"><?php echo $mainPageSetRow['paket2ozellik3']; ?></li>
+                            <li class="list-group-item"><?php echo $mainPageSetRow['paket2ozellik4']; ?></li>
+                            <li class="list-group-item"><?php echo $mainPageSetRow['paket2ozellik5']; ?></li>
+                        </ol>
+                    </div>
+                    <div class="card-footer bg-transparent py-4">
+                        <a href="iletisim.php" class="btn bg-secondary-subtle w-100 py-3 fs-4">Başvur</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow text-center" style="border: none;">
+                    <div class="card-header bg-transparent py-4">
+                        <p><?php echo $mainPageSetRow['paketAdi3']; ?></p>
+                        <span class="fs-2"><?php echo $mainPageSetRow['fiyat3']; ?></span>
+                    </div>
+                    <div class="card-body">
+                        <ol class="list-group">
+                            <li class="list-group-item"><?php echo $mainPageSetRow['paket3ozellik1']; ?></li>
+                            <li class="list-group-item"><?php echo $mainPageSetRow['paket3ozellik2']; ?></li>
+                            <li class="list-group-item"><?php echo $mainPageSetRow['paket3ozellik3']; ?></li>
+                            <li class="list-group-item"><?php echo $mainPageSetRow['paket3ozellik4']; ?></li>
+                            <li class="list-group-item"><?php echo $mainPageSetRow['paket3ozellik5']; ?></li>
                         </ol>
                     </div>
                     <div class="card-footer bg-transparent py-4">
