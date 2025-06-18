@@ -55,6 +55,7 @@ if (!isset($_SESSION['kadi'])) {
                     <a href="yorumlar.php">Yorumlar</a>
                     <a href="mesajlar.php">Mesajlar</a>
                     <a href="reklam-talep.php">Reklam Talepleri</a>
+                    <a href="ayarlar.php">Site Ayarları</a>
                     <a href="logout.php" class="text-warning">Güvenli Çıkış</a>
                 </div>
                 <div class="col-md-10 bg-light py-3">

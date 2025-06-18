@@ -37,7 +37,7 @@ require_once('./assets/baglan.php');
                                     <a class="nav-link active" aria-current="page" href="index.php">Ana Sayfa</a>
                                     <a class="nav-link" href="hakkimizda.php">Hakkımızda</a>
                                     <a class="nav-link" href="portfolyo.php">Portfolyo</a>
-                                    <a class="nav-link" href="index.php#hizmetler">Hizmetler</a>
+                                    <a class="nav-link" href="index.php#services">Hizmetler</a>
                                     <a class="nav-link" href="blog.php">Blog</a>
                                     <a class="nav-link" href="iletisim.php">İletişim</a>
                                 </div>
