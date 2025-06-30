@@ -47,14 +47,15 @@ if (!isset($_SESSION['kadi'])) {
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item text-dark" href="anasayfa.php">Ana Sayfa</a></li>
                             <li><a class="dropdown-item text-dark" href="hakkimizda.php">Hakkımızda</a></li>
-                            <li><a class="dropdown-item text-dark" href="">Another action</a></li>
                         </ul>
                     </div>
                     <a href="portfolyo.php">Portfolyo</a>
                     <a href="hizmetler.php">Hizmetler</a>
                     <a href="yorumlar.php">Yorumlar</a>
                     <a href="mesajlar.php">Mesajlar</a>
+                    <a href="seo-talepleri.php">Seo Talepleri</a>
                     <a href="reklam-talep.php">Reklam Talepleri</a>
+                    <a href="ebulten-uyeler.php">E-Bülten Üyeleri</a>
                     <a href="ayarlar.php">Site Ayarları</a>
                     <a href="logout.php" class="text-warning">Güvenli Çıkış</a>
                 </div>

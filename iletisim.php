@@ -1,4 +1,9 @@
 <?php require_once('header.php') ?>
+
+<!-- 
+$ayarlarRow header.php de oluşturuldu
+-->
+
 <!-- İletişim Banner Section Start -->
 <section id="iletisim" class="banner">
     <div class="container">
@@ -15,10 +20,19 @@
 <!-- Contact Section Start -->
 <section id="info" class="py-5">
     <div class="container">
-        <div class="row">
-            <div class="col-md-4">iletisim 1</div>
-            <div class="col-md-4">iletisim 2</div>
-            <div class="col-md-4">iletisim 3</div>
+        <div class="row text-center">
+            <div class="col-md-4 flexList">
+                <i class="bi bi-telephone"></i>
+                <a class="text-dark" href="tel:+9<?php echo $ayarlarRow['telefon'] ?>"><?php echo $ayarlarRow['telefon'] ?></a>
+            </div>
+            <div class="col-md-4 flexList">
+                <i class="bi bi-whatsapp"></i>
+                <a class="text-dark" href="https://wa.me/+9<?php echo $ayarlarRow['wp'] ?>">Canlı Destek</a>
+            </div>
+            <div class="col-md-4 flexList">
+                <i class="bi bi-envelope"></i>
+                <a class="text-dark" href="<?php echo $ayarlarRow['eposta'] ?>"><?php echo $ayarlarRow['eposta'] ?></a>
+            </div>
         </div>
         <div class="row mt-5">
             <div class="col-md-6">
@@ -44,7 +58,7 @@
                 </form>
             </div>
             <div class="col-md-6">
-                Harita
+                <?php echo $ayarlarRow['harita'] ?>
             </div>
         </div>
     </div>

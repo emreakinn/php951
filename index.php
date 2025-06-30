@@ -113,10 +113,22 @@ $mainPageSetRow = $mainPageSet->fetch();
 
 <?php
 if (isset($_POST['seoApp'])) {
-    $url = urlencode($_POST['siteAdres']);
-    echo '<script>alert("Seo kontrolüne yönlendiriliyorsunuz")</script><meta http-equiv="refresh" content="0; url=https://freetools.seobility.net/en/seocheck/check?url=' . $url . '&crawltype=1">';
-}
+    $seoTalep = $db->prepare('insert into seotalep(url) values(?)');
+    $seoTalep->execute(array($_POST['siteAdres']));
 
+    if ($seoTalep->rowCount()) {
+        echo '<script>alert("Talebiniz Alınmıştır")</script><meta http-equiv="refresh" content="0; url=index.php';
+    } else {
+        echo '<script>alert("Hata Alındı")</script><meta http-equiv="refresh" content="0; url=index.php';
+    }
+}
+?>
+
+<?php
+// if (isset($_POST['seoApp'])) {
+//     $url = urlencode($_POST['siteAdres']);
+//     echo '<script>alert("Seo kontrolüne yönlendiriliyorsunuz")</script><meta http-equiv="refresh" content="0; url=https://freetools.seobility.net/en/seocheck/check?url=' . $url . '&crawltype=1">';
+// }
 ?>
 <!-- Seo application section end -->
 
