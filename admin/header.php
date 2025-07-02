@@ -56,6 +56,7 @@ if (!isset($_SESSION['kadi'])) {
                     <a href="seo-talepleri.php">Seo Talepleri</a>
                     <a href="reklam-talep.php">Reklam Talepleri</a>
                     <a href="ebulten-uyeler.php">E-Bülten Üyeleri</a>
+                    <a href="dijital-pazarlama.php">Dijital Pazarlama Entegrasyon</a>
                     <a href="ayarlar.php">Site Ayarları</a>
                     <a href="logout.php" class="text-warning">Güvenli Çıkış</a>
                 </div>
