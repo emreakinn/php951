@@ -6,6 +6,10 @@ if (!isset($_SESSION['kadi'])) {
     die('Giriş Yetkiniz Yoktur');
 }
 
+$yeniMesaj = $db->prepare('select count(*) from mesajlar where durum="Okunmadı"');
+$yeniMesaj->execute();
+$yeniMesajSay = $yeniMesaj->fetchColumn();
+
 ?>
 
 <!DOCTYPE html>
@@ -52,7 +56,7 @@ if (!isset($_SESSION['kadi'])) {
                     <a href="portfolyo.php">Portfolyo</a>
                     <a href="hizmetler.php">Hizmetler</a>
                     <a href="yorumlar.php">Yorumlar</a>
-                    <a href="mesajlar.php">Mesajlar</a>
+                    <a href="mesajlar.php">Mesajlar <span class="badge bg-danger"><?php echo $yeniMesajSay ?></span></a>
                     <a href="seo-talepleri.php">Seo Talepleri</a>
                     <a href="reklam-talep.php">Reklam Talepleri</a>
                     <a href="ebulten-uyeler.php">E-Bülten Üyeleri</a>

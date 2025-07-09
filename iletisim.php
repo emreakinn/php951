@@ -36,7 +36,7 @@ $ayarlarRow header.php de oluşturuldu
         </div>
         <div class="row mt-5">
             <div class="col-md-6">
-                <form action="" method="post" class="row gy-2">
+                <form action="./assets/mailsender.php" method="post" class="row gy-2">
                     <div class="col-md-6">
                         <input type="text" name="isim" placeholder="Adınız" class="form-control">
                     </div>
